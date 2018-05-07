@@ -28,7 +28,7 @@ setupname=''
 u0 = 10
 N0 = 1e-3
 f0 = 1.0e-4
-runname='ChannelToy02'
+runname='Channel2000_01'
 comments = 'Boo'
 
 # to change U we need to edit external_forcing recompile
@@ -61,8 +61,8 @@ elif runtype=='low':
 # 1500 km x 500 km
 # 10 km horizontal scale:
 
-nx = 80
-ny = 26
+nx = 100
+ny = 100
 nz = 42
 dx0 = 20e3
 dy0 = 20e3
@@ -296,7 +296,7 @@ fig.savefig(outdir + '/figs/Tsurf.png')
 aa = np.zeros((ny, nx))
 tau0 = 0.2 # N/m^2
 tauoffset = 0.0
-windwidth = 1000e3
+windwidth = 2000e3
 tau = tau0 * np.cos((y-y.mean())/ windwidth * np.pi )**2 + tauoffset
 aa = aa + tau[:, np.newaxis]
 with open(indir+"/zonalWindFile.bin", "wb") as f:
